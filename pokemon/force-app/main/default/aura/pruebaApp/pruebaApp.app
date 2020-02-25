@@ -1,5 +1,4 @@
 <aura:application>
-  <!--<c:index />
-  <c:pokemonForm />-->
-  <c:dropMarcas />
+  <c:index2 />
+  <aura:registerEvent name="miEvento" type="c:miEvento" />
 </aura:application>
