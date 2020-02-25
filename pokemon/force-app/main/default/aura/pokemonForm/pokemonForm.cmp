@@ -1,0 +1,56 @@
+<aura:component>
+  <aura:attribute name="nomPoke" type="String" />
+  <aura:attribute name="hpPoke" type="Integer" />
+  <aura:attribute name="atkPoke" type="Integer" />
+  <aura:attribute name="equipo" type="List" />
+
+  <div>Insertar nuevo pokemon en el equipo</div>
+
+  <span>Nombre del pokemon:</span>
+  <input type="text" aura:id="nameInput" label="Escribe nombre del pokemon:" />
+
+  <span>Vida del pokemon:</span>
+  <input type="number" aura:id="hpInput" label="Pon la vida del pokemon:" />
+
+  <span>Ataque del pokemon:</span>
+  <input type="number" aura:id="atkInput" label="Pon el ataque del pokemon:" />
+
+  <lightning:button
+    label="Guarda el pokemon en el equipo"
+    onclick="{!c.addPok}"
+  />
+
+  <div>Datos del pokemon</div>
+  <div>Nombre: {!v.nomPoke}</div>
+  <div>Vida: {!v.hpPoke}</div>
+  <div>Ataque: {!v.atkPoke}</div>
+
+  <br /><br />
+
+  <lightning:select aura:id="select" name="select" label="Select a pie">
+    <option value="">choose one...</option>
+    <option value="apple">apple</option>
+    <option value="pumpkin">pumpkin</option>
+    <option value="cherry">cherry</option>
+    <option value="blueberry">blueberry</option>
+    <option value="pickle">pickle</option>
+  </lightning:select>
+
+  <lightning:select
+    aura:id="equipo"
+    name="equipo"
+    label="Elige al pokemon main"
+    onchange="{!c.cambiarMain}"
+  >
+    <lightning:select
+      name="colorId"
+      label="Select a color:"
+      aura:id="colorId"
+      value="{!v.selectedValue}"
+    >
+      <aura:iteration items="{!v.options}" var="option">
+        <option text="{!option.label}" value="{!option.id}"></option>
+      </aura:iteration>
+    </lightning:select>
+  </lightning:select>
+</aura:component>

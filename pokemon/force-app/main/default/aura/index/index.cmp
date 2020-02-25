@@ -1,0 +1,26 @@
+<aura:component>
+  <aura:attribute name="name" type="String" />
+  <aura:attribute name="nombre" type="String" />
+  <div>Prueba de pagina de pokemon</div>
+  <br /><br />
+
+  <aura:attribute name="pokMaster" type="String" />
+  <div class="row">
+    <h2 class="header">Live Input Text</h2>
+    <lightning:input
+      value="{! v.pokMaster }"
+      placeholder="type your first name..."
+    />
+    <p>
+      El nombre introducido es: {!v.pokMaster }
+    </p>
+  </div>
+  <span>Nombre del maestro pokemon:</span>
+  <input type="text" aura:id="userInput" label="Escribe nombre del maestro:" />
+
+  <lightning:button label="Pulsa a ver que pasa" onclick="{!c.test}" />
+  <lightning:button label="Guarda el nombre introducido" onclick="{!c.test1}" />
+
+  <div>El nombre del entrenador por defecto es {!v.name}</div>
+  <div>El nombre introducido es {!v.nombre}</div>
+</aura:component>

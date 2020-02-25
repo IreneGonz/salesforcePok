@@ -1,0 +1,3 @@
+({
+  callAuraMethod: function(component, event) {}
+});
