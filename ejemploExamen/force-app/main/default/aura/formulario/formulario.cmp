@@ -1,0 +1,55 @@
+<aura:component>
+  <aura:attribute name="coches" type="Object[]" />
+  <aura:attribute name="marca" type="String" />
+  <aura:attribute name="modelo" type="String" />
+  <aura:attribute name="color" type="String" />
+  <aura:attribute name="precio" type="number" />
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+  <div>
+    <span>Marca</span>
+    <lightning:input type="text" aura:id="inputMarca" label="Marca" />
+
+    <span>Modelo</span>
+    <lightning:input type="text" aura:id="inputModelo" label="Modelo" />
+
+    <span>Color</span>
+    <lightning:input type="text" aura:id="inputColor" label="Color" />
+
+    <span>Precio</span>
+    <lightning:input type="number" aura:id="inputPrecio" label="Precio" />
+
+    <lightning:button
+      event="c:nuevoCoche"
+      label="Añadir coche"
+      onclick="{!c.addCoche}"
+    />
+  </div>
+
+  <table>
+    <tr>
+      <td>Marca</td>
+      <td>Modelo</td>
+      <td>Color</td>
+      <td>Precio</td>
+    </tr>
+    <tr>
+      <aura:iteration var="coche" items="{!v.coches}">
+        <td>{!coche.marca}</td>
+        <td>{!coche.modelo></td>
+        <td>{!coche.color}</td>
+        <td>{!coche.precio}</td>
+        <td>{!coche.estado}</td>
+        <td>
+          <lightning:button
+            label="Cambiar estado"
+            onclick="{!c.cambiarEstado}"
+          />
+        </td>
+        <td>
+          <lightning:button label="Modificar precio" onclick="{!c.modPrecio}" />
+        </td>
+      </aura:iteration>
+    </tr>
+  </table>
+</aura:component>
