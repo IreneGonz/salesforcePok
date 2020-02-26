@@ -1,11 +1,13 @@
-<aura:component>
+<aura:component controller="Controlador" access="global">
   <aura:attribute name="msgEvento" type="String" />
+  <aura:attribute name="auraMsg" type="String" />
   <div>Mensaje del evento miEvento {!v.msgEvento}</div>
 
   <lightning:button
     label="Conocer el mensaje del evento"
     onclick="{!c.callControllerJs}"
   />
+  <div>El mensaje del Aura Controller: {!v.auraMsg}</div>
   <lightning:button label="Llamar al Aura controller" onclick="{!c.callAura}" />
   <aura:handler event="c.miEvento" action="{!c.handleEvent}" />
 </aura:component>
