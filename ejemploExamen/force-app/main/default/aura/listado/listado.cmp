@@ -1,5 +1,7 @@
 <aura:component>
   <aura:handler event="nuevoCoche" />
+  <aura:attribute name="coches" type="Object[]" />
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
   <table>
     <tr>
       <td>Marca</td>
