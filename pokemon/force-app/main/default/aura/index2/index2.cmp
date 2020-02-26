@@ -9,5 +9,9 @@
   />
   <div>El mensaje del Aura Controller: {!v.auraMsg}</div>
   <lightning:button label="Llamar al Aura controller" onclick="{!c.callAura}" />
+
+  <!--Mostrar un dropdownlist con un string predeterminado que se pueda cambiar con un boton??
+  un div con el elemento que hayas seleccionado-->
+
   <aura:handler event="c.miEvento" action="{!c.handleEvent}" />
 </aura:component>

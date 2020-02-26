@@ -5,7 +5,7 @@ public with sharing class Controlador {
 
     @AuraEnabled
     public static string llamarAura(String mensaje){
-        return mensaje + ' Has llamado a Aura';
+        return 'AAAAAAH QUE FUNCIONA' + mensaje + ' Has llamado a Aura';
     }
 
     @AuraEnabled
